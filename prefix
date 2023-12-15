@@ -1,0 +1,41 @@
+var longestCommonPrefix = function(strs) {
+    if(string.length === 0 ){
+        return "";
+    }
+    strs.sort (); // function to sort the string in order
+
+    const firstStrs= strs[0];
+    const lastStrs= strs[strs.length -1]; // compare first and last string
+
+    let commonPrefix=""; //store the common prefix here
+    for (let i = 0;i<firstStrs.length ; i++){
+        if(firstStrs[i]=== lastStrs[i]){
+            commonPrefix += firstStrs[i];
+        }else{
+            break;
+        }
+    }
+    return commonPrefix;
+};
+
+//Problem:
+//Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+
+// Approach
+// check if there is anything to check. If string is empty return empty string
+// sort the strings so the common letters can be found easier
+//check each letter one by one by looping through each string
+// check maybe first and last word
+// check each word and common word will be added to common section
+// if there check and character does not have anymore in common break out loop and return common prefix
